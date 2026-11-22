@@ -1,0 +1,81 @@
+/* ===== MÀU SẮC VÀ FONT: sửa ở đây trước ===== */
+:root{
+  --bg:#f7f8fb;        /* nền trang */
+  --text:#1b2540;      /* chữ chính */
+  --muted:#55607d;     /* chữ phụ */
+  --card:#ffffff;      /* nền thẻ */
+  --accent:#2f5bff;    /* nút và link */
+  --on-accent:#ffffff; /* chữ trên nút chính */
+  --font:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+}
+
+/* ===== Cơ bản ===== */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4rem}
+body{margin:0;background:var(--bg);color:var(--text);font:1.0625rem/1.65 var(--font)}
+h1,h2,h3{line-height:1.2;margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:900px;margin:0 auto;padding:0 1.25rem}
+section{padding:3.5rem 0 .5rem}
+h2{font-size:2rem;margin-bottom:1.5rem;display:inline-block;background:linear-gradient(transparent 62%,var(--mark) 62%)}
+p{max-width:62ch;margin:0 0 1rem}
+
+/* ===== Thanh menu ===== */
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:2px solid var(--text)}
+header .wrap{display:flex;align-items:center;gap:1rem;min-height:3.5rem;overflow-x:auto}
+.brand{font-weight:800;font-size:1.15rem;color:var(--text);text-decoration:none;white-space:nowrap}
+nav{display:flex;gap:1rem;margin-left:auto}
+nav a{color:var(--text);text-decoration:none;font-weight:700;white-space:nowrap}
+nav a:hover{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:5px;text-decoration-color:var(--accent)}
+
+/* ===== Đầu trang ===== */
+.hero{padding-top:4rem}
+h1{font-size:clamp(2.2rem,7vw,3.8rem);font-weight:800;letter-spacing:-.01em}
+.lead{font-size:1.25rem;max-width:36ch;margin:1rem 0 1.8rem}
+
+/* ===== Nút ===== */
+.btns{display:flex;flex-wrap:wrap;gap:.9rem}
+.btn{display:inline-block;padding:.6rem 1.2rem;border:2px solid var(--text);border-radius:8px;background:var(--card);color:var(--text);font-weight:700;text-decoration:none;box-shadow:4px 4px 0 var(--text)}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--text)}
+.btn.primary{background:var(--accent);color:var(--on-accent)}
+
+/* ===== Giới thiệu, kỹ năng, sở thích ===== */
+.facts{list-style:none;padding:0;margin:1.5rem 0 0}
+.facts li{padding:.45rem 0;border-bottom:1px dashed var(--muted)}
+.facts b{display:inline-block;min-width:7.5rem}
+.tags{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0;margin:0}
+.tags li{background:var(--card);border:2px solid var(--text);border-radius:999px;padding:.15rem .9rem;font-weight:700}
+.list{list-style:none;padding:0;margin:0;display:grid;gap:1rem}
+.list li{padding-left:1rem;border-left:5px solid var(--accent)}
+.list b{display:block;font-size:1.15rem}
+.list span{color:var(--muted)}
+
+/* ===== Đồ án ===== */
+.grid{display:grid;gap:1.6rem}
+@media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:2px solid var(--text);border-radius:12px;padding:1.3rem;box-shadow:6px 6px 0 var(--text);display:flex;flex-direction:column;gap:.5rem}
+.card h3{font-size:1.35rem}
+.card p{margin:0}
+.stack{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0;margin:.3rem 0}
+.stack li{background:var(--mark);color:#1b2540;border-radius:5px;padding:0 .5rem;font-size:.9rem;font-weight:700}
+.card a{font-weight:700;margin-top:auto}
+
+/* ===== Hình ảnh ===== */
+.gallery{display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.gallery figure{margin:0}
+.gallery a{display:block;border:2px solid var(--text);border-radius:10px;overflow:hidden;box-shadow:5px 5px 0 var(--text);background:var(--card)}
+.gallery a:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--text)}
+.gallery img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.gallery figcaption{margin-top:.6rem;color:var(--muted);font-size:.95rem}
+
+/* Cửa sổ phóng to ảnh */
+dialog{padding:0;border:2px solid var(--text);border-radius:10px;background:var(--card);color:var(--text);max-width:92vw;cursor:pointer}
+dialog::backdrop{background:rgba(10,15,30,.75)}
+dialog img{display:block;max-width:92vw;max-height:80vh;margin:0 auto}
+dialog p{margin:0;padding:.6rem;text-align:center;color:var(--muted);font-size:.9rem;max-width:none}
+
+/* ===== Chân trang ===== */
+.contact{padding-bottom:3rem}
+footer{border-top:2px solid var(--text);padding:1.2rem 0;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
